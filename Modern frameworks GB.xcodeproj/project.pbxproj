@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
 		23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		23EBCA97298E9CAA00DAB279 /* Modern frameworks GB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modern frameworks GB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2319A0C8298EAF50001E0EB4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2319A0C9298EAF64001E0EB4 /* AppManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2319A0CB298EC7EE001E0EB4 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		23EBCA99298E9CAA00DAB279 /* Modern frameworks GB */ = {
 			isa = PBXGroup;
 			children = (
+				2319A0C8298EAF50001E0EB4 /* Managers */,
 				23EBCAC1298EA17000DAB279 /* Providers */,
 				23EBCABE298EA15000DAB279 /* Builders */,
 				23EBCAAF298E9D2800DAB279 /* Screens */,
@@ -335,6 +346,7 @@
 				23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */,
 				23EBCAB5298E9ECB00DAB279 /* MainViewProtocol.swift in Sources */,
 				23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */,
+				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
 				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
