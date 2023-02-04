@@ -18,6 +18,7 @@
 		23EBCAB7298E9EEE00DAB279 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAB6298E9EEE00DAB279 /* MainPresenterProtocol.swift */; };
 		23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */; };
 		23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABA298E9FED00DAB279 /* MainContentView.swift */; };
+		23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */; };
 		23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */; };
 		23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */; };
 		79D23E739F8FA62E010FF28B /* Pods_Modern_frameworks_GB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */; };
@@ -37,6 +38,7 @@
 		23EBCAB6298E9EEE00DAB279 /* MainPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterProtocol.swift; sourceTree = "<group>"; };
 		23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		23EBCABA298E9FED00DAB279 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProviderProtocol.swift; sourceTree = "<group>"; };
 		23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProvider.swift; sourceTree = "<group>"; };
 		7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modern frameworks GB.debug.xcconfig"; path = "Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				23EBCAC1298EA17000DAB279 /* Providers */,
+				23EBCABE298EA15000DAB279 /* Builders */,
 				23EBCAAF298E9D2800DAB279 /* Screens */,
 				23EBCAAE298E9CB700DAB279 /* Core */,
 			);
@@ -148,6 +151,14 @@
 				2319A0CB298EC7EE001E0EB4 /* ContentView */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		23EBCABE298EA15000DAB279 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		23EBCAC1298EA17000DAB279 /* Providers */ = {
@@ -327,6 +338,7 @@
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
 				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
+				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
