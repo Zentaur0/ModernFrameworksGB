@@ -11,6 +11,7 @@
 		23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */; };
 		23EBCAA4298E9CAD00DAB279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EBCAA3298E9CAD00DAB279 /* Assets.xcassets */; };
 		23EBCAA7298E9CAD00DAB279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EBCAA5298E9CAD00DAB279 /* LaunchScreen.storyboard */; };
+		79D23E739F8FA62E010FF28B /* Pods_Modern_frameworks_GB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		23EBCAA3298E9CAD00DAB279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23EBCAA6298E9CAD00DAB279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23EBCAA8298E9CAD00DAB279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modern frameworks GB.debug.xcconfig"; path = "Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB.debug.xcconfig"; sourceTree = "<group>"; };
+		B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modern_frameworks_GB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7AD7C17100B7BA391AB10F1 /* Pods-Modern frameworks GB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modern frameworks GB.release.xcconfig"; path = "Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D23E739F8FA62E010FF28B /* Pods_Modern_frameworks_GB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,8 @@
 			children = (
 				23EBCA99298E9CAA00DAB279 /* Modern frameworks GB */,
 				23EBCA98298E9CAA00DAB279 /* Products */,
+				69E499F2BB700845DB4CBC6B /* Pods */,
+				40C9F5BB06A1AF6E41868B73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +66,21 @@
 				23EBCAA8298E9CAD00DAB279 /* Info.plist */,
 			);
 			path = "Modern frameworks GB";
+		40C9F5BB06A1AF6E41868B73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69E499F2BB700845DB4CBC6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */,
+				D7AD7C17100B7BA391AB10F1 /* Pods-Modern frameworks GB.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +90,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23EBCAAB298E9CAD00DAB279 /* Build configuration list for PBXNativeTarget "Modern frameworks GB" */;
 			buildPhases = (
+				F5C868B2F657A958B9038ECE /* [CP] Check Pods Manifest.lock */,
 				23EBCA93298E9CAA00DAB279 /* Sources */,
 				23EBCA94298E9CAA00DAB279 /* Frameworks */,
 				23EBCA95298E9CAA00DAB279 /* Resources */,
+				F32DD33780950C1C778BBD41 /* [CP] Copy Pods Resources */,
+				772F3ACBC0FA44CFDDBC1C49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +150,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		772F3ACBC0FA44CFDDBC1C49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F32DD33780950C1C778BBD41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5C868B2F657A958B9038ECE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Modern frameworks GB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23EBCA93298E9CAA00DAB279 /* Sources */ = {
@@ -267,6 +351,7 @@
 		};
 		23EBCAAC298E9CAD00DAB279 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +380,7 @@
 		};
 		23EBCAAD298E9CAD00DAB279 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AD7C17100B7BA391AB10F1 /* Pods-Modern frameworks GB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
