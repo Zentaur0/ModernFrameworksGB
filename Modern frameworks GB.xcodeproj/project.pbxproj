@@ -359,7 +359,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Modern frameworks GB/Info.plist";
+				INFOPLIST_FILE = "Modern frameworks GB/Core/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -388,7 +389,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Modern frameworks GB/Info.plist";
+				INFOPLIST_FILE = "Modern frameworks GB/Core/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
