@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import GoogleMaps
+
+typealias EmptyClosure = () -> Void
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyAWg2I-FfR9kIHb_0ThsOOEoIHaSNLV6V8")
+        
         return true
     }
 

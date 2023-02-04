@@ -59,13 +59,23 @@
 		23EBCA99298E9CAA00DAB279 /* Modern frameworks GB */ = {
 			isa = PBXGroup;
 			children = (
+				23EBCAAE298E9CB700DAB279 /* Core */,
+			);
+			path = "Modern frameworks GB";
+			sourceTree = "<group>";
+		};
+		23EBCAAE298E9CB700DAB279 /* Core */ = {
+			isa = PBXGroup;
+			children = (
 				23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */,
 				23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */,
 				23EBCAA3298E9CAD00DAB279 /* Assets.xcassets */,
 				23EBCAA5298E9CAD00DAB279 /* LaunchScreen.storyboard */,
 				23EBCAA8298E9CAD00DAB279 /* Info.plist */,
 			);
-			path = "Modern frameworks GB";
+			path = Core;
+			sourceTree = "<group>";
+		};
 		40C9F5BB06A1AF6E41868B73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
