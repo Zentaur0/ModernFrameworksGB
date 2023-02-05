@@ -89,3 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 Modern frameworks GB.xcodeproj/xcuserdata/antonsivcov.xcuserdatad/xcschemes/xcschememanagement.plist
+Modern frameworks GB.xcodeproj/xcshareddata/xcschemes/Modern frameworks GB.xcscheme
+Podfile.lock
