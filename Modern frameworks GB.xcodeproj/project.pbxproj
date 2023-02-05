@@ -493,7 +493,7 @@
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Modern frameworks GB/Core/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Provide access to your position";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -523,7 +523,7 @@
 				DEVELOPMENT_TEAM = XK4SFX342S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Modern frameworks GB/Core/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Provide access to your position";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
