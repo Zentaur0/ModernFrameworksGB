@@ -57,7 +57,7 @@ extension MainContentView {
         route?.map = nil
     }
     
-    func updateCamera(with model: CameraUpdatePath) {
+    func updateCamera(with model: MainContentView.CameraUpdatePath) {
         route = GMSPolyline()
         routePath = model.path
         route?.path = routePath

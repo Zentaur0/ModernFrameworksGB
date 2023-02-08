@@ -67,7 +67,7 @@ extension MainViewController: MainViewProtocol {
         present(alert, animated: true)
     }
     
-    func updateCamera(with path: CameraUpdatePath) {
+    func updateCamera(with path: MainContentView.CameraUpdatePath) {
         contentView.updateCamera(with: path)
     }
 }
