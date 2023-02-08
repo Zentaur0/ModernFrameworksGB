@@ -13,10 +13,12 @@ final class MainContentView: UIView {
     private var currentMarker: GMSMarker?
     private var manualMarker: GMSMarker?
     private let buttonsContaner = UIStackView()
-    private let currentLocationButton = UIButton()
-    
-    // MARK: - Action Properties
-    private var currenLocationAction: EmptyClosure?
+    private let buttonsContainerBackgroundView = UIView()
+    private let currentLocationButton = ButtonWithAction()
+    private let trackButton = TrackButton()
+    private let previousRouteButton = ButtonWithAction()
+    private var route: GMSPolyline?
+    private var routePath: GMSMutablePath?
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -36,13 +38,39 @@ final class MainContentView: UIView {
 extension MainContentView {
     func updateMap(with model: MainContentView.Model) {
         let location = model.currentLocation
-        let camera = GMSCameraPosition(target: location.coordinate, zoom: 17)
-        mapView.camera = camera
-        addMarker(for: location.coordinate, to: &currentMarker)
+        
+        routePath?.add(location.coordinate)
+        route?.path = routePath
+        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+        mapView.animate(to: position)
+    }
+    
+    func startTracking() {
+        route = GMSPolyline()
+        routePath = GMSMutablePath()
+        route?.map = mapView
+    }
+    
+    func stopTracking() {
+        route = nil
+        routePath = nil
+        route?.map = nil
     }
     
     func setCurrentLocationAction(_ action: @escaping EmptyClosure) {
-        self.currenLocationAction = action
+        currentLocationButton.setButtonAction(action)
+    }
+    
+    func setTrackButtonAction(_ action: @escaping (_ shouldStartNewTrack: Bool) -> Void) {
+        trackButton.setButtonAction { [unowned self] in
+            self.trackButton.toggleState()
+            let currentButtonState = self.trackButton.getCurrentState()
+            action(currentButtonState == .start)
+        }
+    }
+    
+    func setPreviousRouteButtonAction(_ action: @escaping EmptyClosure) {
+        previousRouteButton.setButtonAction(action)
     }
 }
 
@@ -51,8 +79,11 @@ private extension MainContentView {
     func setupUI() {
         backgroundColor = .white
         addSubviews()
+        setupButtonsContainerBackgroundView()
         setupButtonsContainer()
         setupCurrentLocationButton()
+        setupTrackButon()
+        setupPreviousRouteButton()
         setupMapView()
     }
     
@@ -61,11 +92,17 @@ private extension MainContentView {
             $0.edges.equalToSuperview()
         }
         
-        currentLocationButton.snp.makeConstraints {
-            $0.size.equalTo(Const.buttonSize)
+        buttonsContaner.arrangedSubviews.forEach { subview in
+            subview.snp.makeConstraints {
+                $0.size.equalTo(Const.buttonSize)
+            }
         }
         
         buttonsContaner.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(10)
+        }
+        
+        buttonsContainerBackgroundView.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(10)
             $0.leading.trailing.equalToSuperview().priority(.low)
             $0.centerX.equalToSuperview()
@@ -74,11 +111,23 @@ private extension MainContentView {
     
     func addSubviews() {
         addSubview(mapView)
-        addSubview(buttonsContaner)
+        addSubview(buttonsContainerBackgroundView)
+        buttonsContainerBackgroundView.addSubview(buttonsContaner)
         buttonsContaner.addArrangedSubview(currentLocationButton)
+        buttonsContaner.addArrangedSubview(trackButton)
+        buttonsContaner.addArrangedSubview(previousRouteButton)
+    }
+    
+    func setupButtonsContainerBackgroundView() {
+        buttonsContainerBackgroundView.backgroundColor = .white
+        buttonsContainerBackgroundView.layer.cornerRadius = Const.buttonSize.height / 2
+        buttonsContainerBackgroundView.layer.borderColor = UIColor.black.cgColor
+        buttonsContainerBackgroundView.layer.borderWidth = 1
+        buttonsContainerBackgroundView.layer.masksToBounds = true
     }
     
     func setupButtonsContainer() {
+        buttonsContaner.spacing = 10
         buttonsContaner.backgroundColor = .white
         buttonsContaner.axis = .horizontal
         buttonsContaner.distribution = .fillProportionally
@@ -88,12 +137,29 @@ private extension MainContentView {
     
     func setupCurrentLocationButton() {
         currentLocationButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-        currentLocationButton.layer.cornerRadius = Const.buttonSize.height / 2
-        currentLocationButton.layer.masksToBounds = true
-        currentLocationButton.layer.borderWidth = 0.5
-        currentLocationButton.layer.borderColor = UIColor.systemBlue.cgColor
-        currentLocationButton.backgroundColor = .systemBlue.withAlphaComponent(0.15)
-        currentLocationButton.addTarget(self, action: #selector(didTapCurrentLocationButton), for: .touchUpInside)
+        setupButton(currentLocationButton, withColor: .systemBlue)
+    }
+    
+    func setupTrackButon() {
+        setupStandardButton(trackButton)
+    }
+    
+    func setupPreviousRouteButton() {
+        previousRouteButton.setImage(UIImage(systemName: "arrow.down.circle.fill"), for: .normal)
+        setupButton(previousRouteButton, withColor: .systemPurple)
+    }
+    
+    func setupButton(_ button: UIButton, withColor color: UIColor) {
+        setupStandardButton(button)
+        button.layer.borderColor = color.cgColor
+        button.tintColor = color
+        button.backgroundColor = color.withAlphaComponent(0.15)
+    }
+    
+    func setupStandardButton(_ button: UIButton) {
+        button.layer.cornerRadius = Const.buttonSize.height / 2
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = 0.5
     }
     
     func setupMapView() {
@@ -104,13 +170,6 @@ private extension MainContentView {
         let newMarker = GMSMarker(position: coordinate)
         newMarker.map = mapView
         marker = newMarker
-    }
-}
-
-// MARK: - Actions
-private extension MainContentView {
-    @objc func didTapCurrentLocationButton() {
-        currenLocationAction?()
     }
 }
 
