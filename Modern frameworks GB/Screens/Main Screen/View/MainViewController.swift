@@ -50,6 +50,22 @@ extension MainViewController: MainViewProtocol {
     func stopTracking() {
         contentView.stopTracking()
     }
+    
+    func showNotPermittedAlert() {
+        let alert = UIAlertController(title: "", message: "Current tracking has to be stopped in order to show previos route", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Ok", style: .destructive) { [unowned self] _ in
+            self.stopTracking()
+            self.presenter.toogleTrack(false)
+            self.presenter.showPreviousRoute()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okayAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
 }
 
 private extension MainViewController {

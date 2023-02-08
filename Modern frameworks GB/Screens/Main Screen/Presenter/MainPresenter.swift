@@ -51,6 +51,11 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
     }
     
     func showPreviousRoute() {
+        guard routeManager.isTracking == false else {
+            view?.showNotPermittedAlert()
+            return
+        }
+        
         let savedCoordinates = routeManager.getSavedCoordinates()
         
         DispatchQueue.main.async { [weak self] in
