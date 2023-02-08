@@ -10,9 +10,7 @@ final class RouteManagerImpl: RouteManager {
     private let logger = Logger(component: "MainPresenter")
     private var currentRoute = List<LocationObject>()
     private lazy var savedRoute: Results<LocationObject>? = {
-        realmQueue.sync {
-            getPreviousRoute()
-        }
+        getPreviousRoute()
     }()
     
     private let realmQueue = DispatchQueue(label: "RouteManagerQueue")
