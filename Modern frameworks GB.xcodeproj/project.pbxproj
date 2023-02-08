@@ -11,6 +11,7 @@
 		23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE32993920300C3167F /* RouteManagerImpl.swift */; };
 		23071EE82993924000C3167F /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE72993924000C3167F /* LocationObject.swift */; };
 		23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EEB2993931400C3167F /* ButtonWithAction.swift */; };
+		23071EEE2993934A00C3167F /* TrackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EED2993934A00C3167F /* TrackButton.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -34,6 +35,7 @@
 		23071EE32993920300C3167F /* RouteManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManagerImpl.swift; sourceTree = "<group>"; };
 		23071EE72993924000C3167F /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		23071EEB2993931400C3167F /* ButtonWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithAction.swift; sourceTree = "<group>"; };
+		23071EED2993934A00C3167F /* TrackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButton.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				23071EEB2993931400C3167F /* ButtonWithAction.swift */,
+				23071EED2993934A00C3167F /* TrackButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
 				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
+				23071EEE2993934A00C3167F /* TrackButton.swift in Sources */,
 				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
 				23071EE82993924000C3167F /* LocationObject.swift in Sources */,
 			);
