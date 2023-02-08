@@ -4,7 +4,7 @@ import RealmSwift
 
 final class RouteManagerImpl: RouteManager {
     
-    var isTracking: Bool = true
+    var isTracking: Bool = false
     
     // MARK: - Private Properties
     private let logger = Logger(component: "MainPresenter")
