@@ -42,12 +42,28 @@ extension MainViewController: MainViewProtocol {
     func updateMap(with model: MainContentView.Model) {
         contentView.updateMap(with: model)
     }
+    
+    func startTracking() {
+        contentView.startTracking()
+    }
+    
+    func stopTracking() {
+        contentView.stopTracking()
+    }
 }
 
 private extension MainViewController {
     func setupActions() {
         contentView.setCurrentLocationAction { [unowned self] in
             self.presenter.updateCurrentLocation()
+        }
+        
+        contentView.setTrackButtonAction { [unowned self] shouldStartNewTrack in
+            self.presenter.toogleTrack(shouldStartNewTrack)
+        }
+        
+        contentView.setPreviousRouteButtonAction { [unowned self] in
+            self.presenter.showPreviousRoute()
         }
     }
 }
