@@ -1,5 +1,6 @@
 import Foundation
 import CoreLocation
+import GoogleMaps
 import RealmSwift
 
 final class RouteManagerImpl: RouteManager {
@@ -9,6 +10,7 @@ final class RouteManagerImpl: RouteManager {
     // MARK: - Private Properties
     private let logger = Logger(component: "MainPresenter")
     private var currentRoute = List<LocationObject>()
+    private let currentRoutePath = GMSMutablePath()
     private lazy var savedRoute: Results<LocationObject>? = {
         getPreviousRoute()
     }()
@@ -40,8 +42,16 @@ final class RouteManagerImpl: RouteManager {
         }
     }
     
+    func getSavedPath() -> GMSMutablePath {
+        let coordinated = getSavedCoordinates()
+        coordinated.forEach {
+            currentRoutePath.add($0.coordinate)
+        }
+        
+        return currentRoutePath
+    }
     
-    func getSavedCoordinates() -> [CLLocation] {
+    private func getSavedCoordinates() -> [CLLocation] {
         savedRoute?.forEach {
             currentRoute.append($0)
         }

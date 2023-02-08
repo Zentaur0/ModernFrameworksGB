@@ -56,14 +56,10 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
             return
         }
         
-        let savedCoordinates = routeManager.getSavedCoordinates()
+        let savedPath = routeManager.getSavedPath()
         
         DispatchQueue.main.async { [weak self] in
-            savedCoordinates.forEach {
-                self?.updateViewCurrentLocation(with: $0)
-            }
-            
-            self?.view?.updateCamera()
+            self?.view?.updateCamera(with: .init(path: savedPath))
         }
     }
 }
