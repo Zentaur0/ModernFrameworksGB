@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23071EE2299391EE00C3167F /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE1299391EE00C3167F /* RouteManager.swift */; };
+		23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE32993920300C3167F /* RouteManagerImpl.swift */; };
+		23071EE82993924000C3167F /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE72993924000C3167F /* LocationObject.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23071EE1299391EE00C3167F /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
+		23071EE32993920300C3167F /* RouteManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManagerImpl.swift; sourceTree = "<group>"; };
+		23071EE72993924000C3167F /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -60,9 +66,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23071EDF299391E200C3167F /* RouteManager */ = {
+			isa = PBXGroup;
+			children = (
+				23071EE1299391EE00C3167F /* RouteManager.swift */,
+				23071EE32993920300C3167F /* RouteManagerImpl.swift */,
+			);
+			path = RouteManager;
+			sourceTree = "<group>";
+		};
+		23071EE52993923100C3167F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23071EE62993923900C3167F /* Realm */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23071EE62993923900C3167F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				23071EE72993924000C3167F /* LocationObject.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				23071EDF299391E200C3167F /* RouteManager */,
 				2319A0C9298EAF64001E0EB4 /* AppManager.swift */,
 			);
 			path = Managers;
@@ -98,6 +130,7 @@
 		23EBCA99298E9CAA00DAB279 /* Modern frameworks GB */ = {
 			isa = PBXGroup;
 			children = (
+				23071EE52993923100C3167F /* Models */,
 				2319A0C8298EAF50001E0EB4 /* Managers */,
 				23EBCAC1298EA17000DAB279 /* Providers */,
 				23EBCABE298EA15000DAB279 /* Builders */,
@@ -343,14 +376,17 @@
 				23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
+				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
 				23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */,
 				23EBCAB5298E9ECB00DAB279 /* MainViewProtocol.swift in Sources */,
 				23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */,
+				23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */,
 				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
 				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
 				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
+				23071EE82993924000C3167F /* LocationObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
