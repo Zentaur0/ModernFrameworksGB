@@ -5,4 +5,5 @@ protocol MainViewProtocol: AnyObject {
     func startTracking()
     func stopTracking()
     func showNotPermittedAlert()
+    func updateCamera(with model: MainContentView.CameraUpdateModel)
 }

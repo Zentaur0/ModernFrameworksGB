@@ -66,6 +66,10 @@ extension MainViewController: MainViewProtocol {
         
         present(alert, animated: true)
     }
+    
+    func updateCamera(with model: MainContentView.CameraUpdateModel) {
+        contentView.updateCamera(with: model)
+    }
 }
 
 private extension MainViewController {

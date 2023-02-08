@@ -57,6 +57,14 @@ extension MainContentView {
         route?.map = nil
     }
     
+    func updateCamera(with model: MainContentView.CameraUpdateModel) {
+        mapView.camera(for: .init(
+            coordinate: model.firstCoordinate,
+            coordinate: model.lastCoordinate),
+                       insets: .init()
+        )
+    }
+    
     func setCurrentLocationAction(_ action: @escaping EmptyClosure) {
         currentLocationButton.setButtonAction(action)
     }
@@ -164,6 +172,7 @@ private extension MainContentView {
     
     func setupMapView() {
         mapView.delegate = self
+        mapView.isMyLocationEnabled = true
     }
     
     func addMarker(for coordinate: CLLocationCoordinate2D, to marker: inout GMSMarker?) {
