@@ -46,6 +46,8 @@ extension MainContentView {
     }
     
     func startTracking() {
+        routePath = nil
+        route?.map = nil
         route = GMSPolyline()
         routePath = GMSMutablePath()
         route?.map = mapView
@@ -53,16 +55,13 @@ extension MainContentView {
     
     func stopTracking() {
         route = nil
-        routePath = nil
-        route?.map = nil
     }
     
-    func updateCamera(with model: MainContentView.CameraUpdateModel) {
-        mapView.camera(for: .init(
-            coordinate: model.firstCoordinate,
-            coordinate: model.lastCoordinate),
-                       insets: .init()
-        )
+    func updateCamera() {
+        guard let routePath = routePath else { return }
+        let bounds = GMSCoordinateBounds(path: routePath)
+        
+        mapView.animate(with: GMSCameraUpdate.fit(bounds))
     }
     
     func setCurrentLocationAction(_ action: @escaping EmptyClosure) {

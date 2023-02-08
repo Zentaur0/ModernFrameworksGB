@@ -63,10 +63,7 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
                 self?.updateViewCurrentLocation(with: $0)
             }
             
-            guard let firstCoordinate = savedCoordinates.first?.coordinate,
-                  let lastCoordinate = savedCoordinates.last?.coordinate else { return }
-            
-            self?.view?.updateCamera(with: .init(firstCoordinate: firstCoordinate, lastCoordinate: lastCoordinate))
+            self?.view?.updateCamera()
         }
     }
 }
