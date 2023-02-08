@@ -58,6 +58,7 @@ extension MainContentView {
     }
     
     func updateCamera(with model: MainContentView.CameraUpdatePath) {
+        guard route == nil, routePath == nil else { return }
         route = GMSPolyline()
         routePath = model.path
         route?.path = routePath
