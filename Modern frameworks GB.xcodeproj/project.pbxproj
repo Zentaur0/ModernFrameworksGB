@@ -20,6 +20,8 @@
 		23071F0C299A488200C3167F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0B299A488200C3167F /* User.swift */; };
 		23071F10299A52EF00C3167F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0F299A52EF00C3167F /* TextField.swift */; };
 		23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F12299A5E7900C3167F /* LoginContentView + Model.swift */; };
+		23071F16299A5F7D00C3167F /* UserManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F15299A5F7D00C3167F /* UserManagerImpl.swift */; };
+		23071F18299A5F8500C3167F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F17299A5F8500C3167F /* UserManager.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -51,6 +53,8 @@
 		23071F0B299A488200C3167F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23071F0F299A52EF00C3167F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		23071F12299A5E7900C3167F /* LoginContentView + Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginContentView + Model.swift"; sourceTree = "<group>"; };
+		23071F15299A5F7D00C3167F /* UserManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerImpl.swift; sourceTree = "<group>"; };
+		23071F17299A5F8500C3167F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -173,9 +177,19 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		23071F14299A5F5800C3167F /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				23071F17299A5F8500C3167F /* UserManager.swift */,
+				23071F15299A5F7D00C3167F /* UserManagerImpl.swift */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				23071F14299A5F5800C3167F /* UserManager */,
 				23071EDF299391E200C3167F /* RouteManager */,
 				2319A0C9298EAF64001E0EB4 /* AppManager.swift */,
 			);
@@ -466,11 +480,13 @@
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
 				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
+				23071F16299A5F7D00C3167F /* UserManagerImpl.swift in Sources */,
 				23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */,
 				23071EFA299A461E00C3167F /* LoginViewController.swift in Sources */,
 				23071EFC299A463100C3167F /* LoginPresenter.swift in Sources */,
 				23EBCAB5298E9ECB00DAB279 /* MainViewProtocol.swift in Sources */,
 				23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */,
+				23071F18299A5F8500C3167F /* UserManager.swift in Sources */,
 				23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */,
 				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
