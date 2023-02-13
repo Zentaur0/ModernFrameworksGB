@@ -22,6 +22,7 @@
 		23071F06299A474000C3167F /* PasswordRecoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F05299A474000C3167F /* PasswordRecoverPresenter.swift */; };
 		23071F08299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */; };
 		23071F0A299A475700C3167F /* PasswordRecoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F09299A475700C3167F /* PasswordRecoverContentView.swift */; };
+		23071F0C299A488200C3167F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0B299A488200C3167F /* User.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -56,6 +57,7 @@
 		23071F05299A474000C3167F /* PasswordRecoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverPresenter.swift; sourceTree = "<group>"; };
 		23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverPresenterProtocol.swift; sourceTree = "<group>"; };
 		23071F09299A475700C3167F /* PasswordRecoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverContentView.swift; sourceTree = "<group>"; };
+		23071F0B299A488200C3167F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				23071EE72993924000C3167F /* LocationObject.swift */,
+				23071F0B299A488200C3167F /* User.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				23071F02299A471500C3167F /* PasswordRecoverViewProtocol.swift in Sources */,
 				23EBCAB7298E9EEE00DAB279 /* MainPresenterProtocol.swift in Sources */,
 				23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */,
+				23071F0C299A488200C3167F /* User.swift in Sources */,
 				23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
