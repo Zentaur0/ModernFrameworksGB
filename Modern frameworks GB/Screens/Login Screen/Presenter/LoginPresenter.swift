@@ -25,10 +25,12 @@ final class LoginPresenter: LoginPresenterProtocol {
         user.login = model.login
         user.password = model.password
         userManager.loginUser(user) { [weak self] value in
-            if value == true {
-                self?.view?.openMainScreen()
-            } else {
-                self?.view?.showUserDoNotExistAlert()
+            DispatchQueue.main.async {
+                if value == true {
+                    self?.view?.openMainScreen()
+                } else {
+                    self?.view?.showUserDoNotExistAlert()
+                }
             }
         }
     }
@@ -38,11 +40,13 @@ final class LoginPresenter: LoginPresenterProtocol {
         user.login = model.login
         user.password = model.password
         userManager.registerUser(user) { [weak self] value in
-            if value == true {
-                self?.view?.showPasswordHasBeenChangedAlert()
-                self?.view?.openMainScreen()
-            } else {
-                self?.logger.info("Something went wrong")
+            DispatchQueue.main.async {
+                if value == true {
+                    self?.view?.openMainScreen()
+                    self?.view?.showPasswordHasBeenChangedAlert()
+                } else {
+                    self?.logger.info("Something went wrong")
+                }
             }
         }
     }

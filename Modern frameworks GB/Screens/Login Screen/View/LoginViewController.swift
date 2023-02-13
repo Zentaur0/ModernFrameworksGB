@@ -9,6 +9,9 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - Public Properties
+    var coordinator: AppCoordinator?
+    
     // MARK: - Private Properties
     private let contentView = LoginContentView()
     private let presenter: LoginPresenterProtocol
@@ -32,21 +35,28 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupActions()
     }
 }
 
 // MARK: - LoginViewProtocol -
 extension LoginViewController: LoginViewProtocol {
     func openMainScreen() {
-        
+        coordinator?.openMapScreen()
     }
     
     func showUserDoNotExistAlert() {
-        
+        let alert = UIAlertController(title: "", message: "User do not exist. Press register", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(action)
+        coordinator?.showAlert(alert)
     }
     
     func showPasswordHasBeenChangedAlert() {
-        
+        let alert = UIAlertController(title: "", message: "Password has been changed", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(action)
+        coordinator?.showAlert(alert)
     }
 }
 
