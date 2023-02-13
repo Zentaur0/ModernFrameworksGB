@@ -112,6 +112,68 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		23071EEF299A450700C3167F /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				23071EF1299A454D00C3167F /* Components */,
+				23071EF3299A455700C3167F /* Presenter */,
+				23071EF2299A455300C3167F /* View */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		23071EF0299A453000C3167F /* PasswordRecoverScreen */ = {
+			isa = PBXGroup;
+			children = (
+				23071EF6299A45E600C3167F /* Components */,
+				23071EF5299A45E000C3167F /* Presenter */,
+				23071EF4299A45CF00C3167F /* View */,
+			);
+			path = PasswordRecoverScreen;
+			sourceTree = "<group>";
+		};
+		23071EF1299A454D00C3167F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23071EF2299A455300C3167F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23071EF3299A455700C3167F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		23071EF4299A45CF00C3167F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23071EF5299A45E000C3167F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		23071EF6299A45E600C3167F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +240,8 @@
 		23EBCAAF298E9D2800DAB279 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				23071EF0299A453000C3167F /* PasswordRecoverScreen */,
+				23071EEF299A450700C3167F /* Login Screen */,
 				23EBCAB0298E9E8400DAB279 /* Main Screen */,
 			);
 			path = Screens;
