@@ -17,6 +17,11 @@
 		23071EFC299A463100C3167F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFB299A463100C3167F /* LoginPresenter.swift */; };
 		23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFD299A463C00C3167F /* LoginPresenterProtocol.swift */; };
 		23071F00299A465E00C3167F /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFF299A465E00C3167F /* LoginContentView.swift */; };
+		23071F02299A471500C3167F /* PasswordRecoverViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F01299A471500C3167F /* PasswordRecoverViewProtocol.swift */; };
+		23071F04299A472600C3167F /* PasswordRecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F03299A472600C3167F /* PasswordRecoverViewController.swift */; };
+		23071F06299A474000C3167F /* PasswordRecoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F05299A474000C3167F /* PasswordRecoverPresenter.swift */; };
+		23071F08299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */; };
+		23071F0A299A475700C3167F /* PasswordRecoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F09299A475700C3167F /* PasswordRecoverContentView.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -46,6 +51,11 @@
 		23071EFB299A463100C3167F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		23071EFD299A463C00C3167F /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
 		23071EFF299A465E00C3167F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
+		23071F01299A471500C3167F /* PasswordRecoverViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverViewProtocol.swift; sourceTree = "<group>"; };
+		23071F03299A472600C3167F /* PasswordRecoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverViewController.swift; sourceTree = "<group>"; };
+		23071F05299A474000C3167F /* PasswordRecoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverPresenter.swift; sourceTree = "<group>"; };
+		23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverPresenterProtocol.swift; sourceTree = "<group>"; };
+		23071F09299A475700C3167F /* PasswordRecoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverContentView.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -171,6 +181,8 @@
 		23071EF4299A45CF00C3167F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				23071F01299A471500C3167F /* PasswordRecoverViewProtocol.swift */,
+				23071F03299A472600C3167F /* PasswordRecoverViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +190,8 @@
 		23071EF5299A45E000C3167F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */,
+				23071F05299A474000C3167F /* PasswordRecoverPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -185,6 +199,7 @@
 		23071EF6299A45E600C3167F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				23071F09299A475700C3167F /* PasswordRecoverContentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -475,6 +490,9 @@
 				23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */,
 				23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */,
 				23071F00299A465E00C3167F /* LoginContentView.swift in Sources */,
+				23071F08299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift in Sources */,
+				23071F0A299A475700C3167F /* PasswordRecoverContentView.swift in Sources */,
+				23071F02299A471500C3167F /* PasswordRecoverViewProtocol.swift in Sources */,
 				23EBCAB7298E9EEE00DAB279 /* MainPresenterProtocol.swift in Sources */,
 				23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */,
 				23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */,
@@ -492,6 +510,8 @@
 				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
 				23071EEE2993934A00C3167F /* TrackButton.swift in Sources */,
+				23071F04299A472600C3167F /* PasswordRecoverViewController.swift in Sources */,
+				23071F06299A474000C3167F /* PasswordRecoverPresenter.swift in Sources */,
 				23071EF8299A461400C3167F /* LoginViewProtocol.swift in Sources */,
 				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
 				23071EE82993924000C3167F /* LocationObject.swift in Sources */,
