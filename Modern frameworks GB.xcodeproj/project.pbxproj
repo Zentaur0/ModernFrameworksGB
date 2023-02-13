@@ -32,7 +32,6 @@
 		23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */; };
 		23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABA298E9FED00DAB279 /* MainContentView.swift */; };
 		23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */; };
-		23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */; };
 		23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */; };
 		79D23E739F8FA62E010FF28B /* Pods_Modern_frameworks_GB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		23EBCABA298E9FED00DAB279 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
-		23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProviderProtocol.swift; sourceTree = "<group>"; };
 		23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProvider.swift; sourceTree = "<group>"; };
 		7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modern frameworks GB.debug.xcconfig"; path = "Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB.debug.xcconfig"; sourceTree = "<group>"; };
 		B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modern_frameworks_GB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,7 +297,6 @@
 		23EBCAC2298EA17A00DAB279 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */,
 				23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */,
 			);
 			path = Presenter;
@@ -473,7 +470,6 @@
 				23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */,
 				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
-				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
 				23071EEE2993934A00C3167F /* TrackButton.swift in Sources */,
 				23071EF8299A461400C3167F /* LoginViewProtocol.swift in Sources */,

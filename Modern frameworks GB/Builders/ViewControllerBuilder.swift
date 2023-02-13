@@ -4,10 +4,10 @@ import Foundation
 final class ViewControllerBuilder {
     
     // MARK: - Private Properties
-    private let presenterProvider: PresenterProviderProtocol
+    private let presenterProvider: PresenterProvider
     
     // MARK: - Init
-    init(presenterProvider: PresenterProviderProtocol) {
+    init(presenterProvider: PresenterProvider) {
         self.presenterProvider = presenterProvider
     }
     
