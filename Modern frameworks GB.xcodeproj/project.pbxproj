@@ -19,6 +19,7 @@
 		23071F00299A465E00C3167F /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFF299A465E00C3167F /* LoginContentView.swift */; };
 		23071F0C299A488200C3167F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0B299A488200C3167F /* User.swift */; };
 		23071F10299A52EF00C3167F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0F299A52EF00C3167F /* TextField.swift */; };
+		23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F12299A5E7900C3167F /* LoginContentView + Model.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -49,6 +50,7 @@
 		23071EFF299A465E00C3167F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		23071F0B299A488200C3167F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23071F0F299A52EF00C3167F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		23071F12299A5E7900C3167F /* LoginContentView + Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginContentView + Model.swift"; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				23071EFF299A465E00C3167F /* LoginContentView.swift */,
+				23071F12299A5E7900C3167F /* LoginContentView + Model.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */,
 				23071F0C299A488200C3167F /* User.swift in Sources */,
 				23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */,
+				23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
 				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
