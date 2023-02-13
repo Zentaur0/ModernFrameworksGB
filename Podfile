@@ -9,5 +9,6 @@ target 'Modern frameworks GB' do
 
   pod 'GoogleMaps'
   pod 'SnapKit'
+  pod 'RealmSwift'
 
 end

@@ -42,12 +42,48 @@ extension MainViewController: MainViewProtocol {
     func updateMap(with model: MainContentView.Model) {
         contentView.updateMap(with: model)
     }
+    
+    func startTracking() {
+        contentView.startTracking()
+    }
+    
+    func stopTracking() {
+        contentView.stopTracking()
+    }
+    
+    func showNotPermittedAlert() {
+        let alert = UIAlertController(title: "", message: "Current tracking has to be stopped in order to show previos route", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Ok", style: .destructive) { [unowned self] _ in
+            self.stopTracking()
+            self.presenter.toogleTrack(false)
+            self.presenter.showPreviousRoute()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okayAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    func updateCamera(with path: MainContentView.CameraUpdatePath) {
+        contentView.updateCamera(with: path)
+    }
 }
 
 private extension MainViewController {
     func setupActions() {
         contentView.setCurrentLocationAction { [unowned self] in
             self.presenter.updateCurrentLocation()
+        }
+        
+        contentView.setTrackButtonAction { [unowned self] shouldStartNewTrack in
+            self.presenter.toogleTrack(shouldStartNewTrack)
+        }
+        
+        contentView.setPreviousRouteButtonAction { [unowned self] in
+            self.presenter.showPreviousRoute()
         }
     }
 }
