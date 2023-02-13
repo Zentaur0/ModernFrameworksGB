@@ -8,5 +8,7 @@
 import Foundation
 
 protocol LoginViewProtocol: AnyObject {
-    
+    func openMainScreen()
+    func showUserDoNotExistAlert()
+    func showPasswordHasBeenChangedAlert()
 }
