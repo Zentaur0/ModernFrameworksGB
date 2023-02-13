@@ -11,6 +11,19 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Private Properties
     private let contentView = LoginContentView()
+    private let presenter: LoginPresenterProtocol
+    
+    // MARK: - Init
+    init(presenter: LoginPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available (*, unavailable)
+    required init?(coder: NSCoder) {
+        assertionFailure("init(coder:) has not been implemented")
+        return nil
+    }
     
     // MARK: - Life Cycle
     override func loadView() {
