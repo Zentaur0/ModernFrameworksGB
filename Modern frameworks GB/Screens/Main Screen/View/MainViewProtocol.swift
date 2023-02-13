@@ -6,4 +6,5 @@ protocol MainViewProtocol: AnyObject {
     func stopTracking()
     func showNotPermittedAlert()
     func updateCamera(with path: MainContentView.CameraUpdatePath)
+    func logout()
 }
