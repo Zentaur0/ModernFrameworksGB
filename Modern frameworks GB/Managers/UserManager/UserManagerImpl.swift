@@ -16,8 +16,9 @@ final class UserManagerImpl: UserManager {
     func loginUser(_ user: User, completion: @escaping (_ isSuccessful: Bool) -> Void) {
         do {
             let realm = try Realm()
-            let user = realm.object(ofType: User.self, forPrimaryKey: user.login)
-            completion(user != nil)
+            let existedUser = realm.object(ofType: User.self, forPrimaryKey: user.login)
+            let isSuccess = existedUser != nil && user.password == existedUser?.password
+            completion(isSuccess)
         } catch {
             logger.error(error)
             completion(false)
