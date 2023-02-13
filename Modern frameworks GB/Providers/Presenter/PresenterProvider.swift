@@ -11,6 +11,10 @@ final class PresenterProvider {
         let presenter = MainPresenter(routeManager: routeManager)
         return presenter
     }
+    
+    func makeLoginPresenter() -> LoginPresenter {
+        let userManager = UserManagerImpl(realmQueue: realmQueue)
+        let presenter = LoginPresenter(userManager: userManager)
         return presenter
     }
 }
