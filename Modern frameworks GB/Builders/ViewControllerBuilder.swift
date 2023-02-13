@@ -17,4 +17,11 @@ final class ViewControllerBuilder {
         presenter.setView(viewController)
         return viewController
     }
+    
+    func buildLoginViewController() -> UIViewController {
+        let presenter = presenterProvider.makeLoginPresenter()
+        let viewController = LoginViewController(presenter: presenter)
+        presenter.setView(viewController)
+        return viewController
+    }
 }
