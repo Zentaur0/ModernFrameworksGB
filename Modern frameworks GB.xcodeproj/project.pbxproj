@@ -23,6 +23,7 @@
 		23071F08299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */; };
 		23071F0A299A475700C3167F /* PasswordRecoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F09299A475700C3167F /* PasswordRecoverContentView.swift */; };
 		23071F0C299A488200C3167F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0B299A488200C3167F /* User.swift */; };
+		23071F10299A52EF00C3167F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0F299A52EF00C3167F /* TextField.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -58,6 +59,7 @@
 		23071F07299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverPresenterProtocol.swift; sourceTree = "<group>"; };
 		23071F09299A475700C3167F /* PasswordRecoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverContentView.swift; sourceTree = "<group>"; };
 		23071F0B299A488200C3167F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23071F0F299A52EF00C3167F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		23071EE92993930200C3167F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				23071F0E299A52E000C3167F /* TextFields */,
 				23071EEA2993930800C3167F /* Buttons */,
 			);
 			path = Common;
@@ -205,6 +208,14 @@
 				23071F09299A475700C3167F /* PasswordRecoverContentView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		23071F0E299A52E000C3167F /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				23071F0F299A52EF00C3167F /* TextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
@@ -493,6 +504,7 @@
 				23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */,
 				23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */,
 				23071F00299A465E00C3167F /* LoginContentView.swift in Sources */,
+				23071F10299A52EF00C3167F /* TextField.swift in Sources */,
 				23071F08299A474B00C3167F /* PasswordRecoverPresenterProtocol.swift in Sources */,
 				23071F0A299A475700C3167F /* PasswordRecoverContentView.swift in Sources */,
 				23071F02299A471500C3167F /* PasswordRecoverViewProtocol.swift in Sources */,
