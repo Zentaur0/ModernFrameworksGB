@@ -9,6 +9,8 @@ class ButtonWithAction: UIButton {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        layer.cornerRadius = 8
         addActionTarget()
     }
     
