@@ -8,13 +8,13 @@
 import Foundation
 
 final class AppManager {
+    
+    // MARK: - Private Properties
+    private let presenterProvider = PresenterProvider()
+    
+    // MARK: - Public Methods
     func makeViewControllerBuilder() -> ViewControllerBuilder {
-        let presenterProvider = makePresenterProvider()
         let builder = ViewControllerBuilder(presenterProvider: presenterProvider)
         return builder
-    }
-    
-    private func makePresenterProvider() -> PresenterProviderProtocol {
-        PresenterProvider()
     }
 }

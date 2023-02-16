@@ -17,6 +17,7 @@ final class MainContentView: UIView {
     private let currentLocationButton = ButtonWithAction()
     private let trackButton = TrackButton()
     private let previousRouteButton = ButtonWithAction()
+    private let logoutButton = ButtonWithAction()
     private var route: GMSPolyline?
     private var routePath: GMSMutablePath?
     
@@ -82,6 +83,10 @@ extension MainContentView {
     func setPreviousRouteButtonAction(_ action: @escaping EmptyClosure) {
         previousRouteButton.setButtonAction(action)
     }
+    
+    func setLogoutButtonAction(_ action: @escaping EmptyClosure) {
+        logoutButton.setButtonAction(action)
+    }
 }
 
 // MARK: - Private Methods
@@ -95,6 +100,7 @@ private extension MainContentView {
         setupTrackButon()
         setupPreviousRouteButton()
         setupMapView()
+        setupLogoutButton()
     }
     
     func setupConstraints() {
@@ -117,10 +123,18 @@ private extension MainContentView {
             $0.leading.trailing.equalToSuperview().priority(.low)
             $0.centerX.equalToSuperview()
         }
+        
+        logoutButton.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(70)
+            $0.height.equalTo(40)
+        }
     }
     
     func addSubviews() {
         addSubview(mapView)
+        addSubview(logoutButton)
         addSubview(buttonsContainerBackgroundView)
         buttonsContainerBackgroundView.addSubview(buttonsContaner)
         buttonsContaner.addArrangedSubview(currentLocationButton)
@@ -181,6 +195,11 @@ private extension MainContentView {
         let newMarker = GMSMarker(position: coordinate)
         newMarker.map = mapView
         marker = newMarker
+    }
+    
+    func setupLogoutButton() {
+        logoutButton.setTitle("Logout", for: .normal)
+        logoutButton.backgroundColor = .black
     }
 }
 

@@ -1,6 +1,20 @@
-final class PresenterProvider: PresenterProviderProtocol {
+import Foundation
+
+final class PresenterProvider {
+    
+    // MARK: - Private Properties
+    private let realmQueue = DispatchQueue(label: "RealmQueue")
+    
+    // MARK: - Public Methods
     func makeMainPresenter() -> MainPresenter {
-        let presenter = MainPresenter(routeManager: RouteManagerImpl())
+        let routeManager = RouteManagerImpl(realmQueue: realmQueue)
+        let presenter = MainPresenter(routeManager: routeManager)
+        return presenter
+    }
+    
+    func makeLoginPresenter() -> LoginPresenter {
+        let userManager = UserManagerImpl(realmQueue: realmQueue)
+        let presenter = LoginPresenter(userManager: userManager)
         return presenter
     }
 }

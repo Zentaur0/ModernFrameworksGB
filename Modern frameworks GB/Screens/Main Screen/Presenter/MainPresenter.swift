@@ -62,6 +62,10 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
             self?.view?.updateCamera(with: .init(path: savedPath))
         }
     }
+    
+    func logout() {
+        view?.logout()
+    }
 }
 
 // MARK: - Private Methods

@@ -5,8 +5,6 @@ import RealmSwift
 
 final class RouteManagerImpl: RouteManager {
     
-    var isTracking: Bool = false
-    
     // MARK: - Private Properties
     private let logger = Logger(component: "MainPresenter")
     private var currentRoute = List<LocationObject>()
@@ -15,8 +13,16 @@ final class RouteManagerImpl: RouteManager {
         getPreviousRoute()
     }()
     
-    private let realmQueue = DispatchQueue(label: "RouteManagerQueue")
-    private var routeToken: NotificationToken?
+    // MARK: - Dependencies
+    private let realmQueue: DispatchQueue
+    
+    // MARK: - Init
+    init(realmQueue: DispatchQueue) {
+        self.realmQueue = realmQueue
+    }
+    
+    // MARK: - RouteManager
+    var isTracking: Bool = false
     
     func appendLocation(_ location: CLLocation) {
         let coordinate = location.coordinate
@@ -51,6 +57,7 @@ final class RouteManagerImpl: RouteManager {
         return currentRoutePath
     }
     
+    // MARK: - Private Properties
     private func getSavedCoordinates() -> [CLLocation] {
         savedRoute?.forEach {
             currentRoute.append($0)

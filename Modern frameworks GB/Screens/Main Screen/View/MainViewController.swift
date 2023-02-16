@@ -9,6 +9,9 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    // MARK: - Public Properties
+    var coordinator: AppCoordinator?
+    
     // MARK: - Private Properties
     private let presenter: MainPresenterProtocol
     private let contentView = MainContentView()
@@ -64,7 +67,11 @@ extension MainViewController: MainViewProtocol {
         alert.addAction(okayAction)
         alert.addAction(cancelAction)
         
-        present(alert, animated: true)
+        coordinator?.showAlert(alert)
+    }
+    
+    func logout() {
+        coordinator?.openLoginScreen()
     }
     
     func updateCamera(with path: MainContentView.CameraUpdatePath) {
@@ -84,6 +91,10 @@ private extension MainViewController {
         
         contentView.setPreviousRouteButtonAction { [unowned self] in
             self.presenter.showPreviousRoute()
+        }
+        
+        contentView.setLogoutButtonAction { [unowned self] in
+            self.presenter.logout()
         }
     }
 }

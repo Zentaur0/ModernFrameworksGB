@@ -3,4 +3,5 @@ protocol MainPresenterProtocol {
     func updateCurrentLocation()
     func toogleTrack(_ shouldStartNewTrack: Bool)
     func showPreviousRoute()
+    func logout()
 }

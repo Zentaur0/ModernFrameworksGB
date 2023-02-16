@@ -12,6 +12,18 @@
 		23071EE82993924000C3167F /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EE72993924000C3167F /* LocationObject.swift */; };
 		23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EEB2993931400C3167F /* ButtonWithAction.swift */; };
 		23071EEE2993934A00C3167F /* TrackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EED2993934A00C3167F /* TrackButton.swift */; };
+		23071EF8299A461400C3167F /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EF7299A461400C3167F /* LoginViewProtocol.swift */; };
+		23071EFA299A461E00C3167F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EF9299A461E00C3167F /* LoginViewController.swift */; };
+		23071EFC299A463100C3167F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFB299A463100C3167F /* LoginPresenter.swift */; };
+		23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFD299A463C00C3167F /* LoginPresenterProtocol.swift */; };
+		23071F00299A465E00C3167F /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071EFF299A465E00C3167F /* LoginContentView.swift */; };
+		23071F0C299A488200C3167F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0B299A488200C3167F /* User.swift */; };
+		23071F10299A52EF00C3167F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F0F299A52EF00C3167F /* TextField.swift */; };
+		23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F12299A5E7900C3167F /* LoginContentView + Model.swift */; };
+		23071F16299A5F7D00C3167F /* UserManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F15299A5F7D00C3167F /* UserManagerImpl.swift */; };
+		23071F18299A5F8500C3167F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F17299A5F8500C3167F /* UserManager.swift */; };
+		23071F1B299A8FD800C3167F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F1A299A8FD800C3167F /* Coordinator.swift */; };
+		23071F1D299A8FF800C3167F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23071F1C299A8FF800C3167F /* AppCoordinator.swift */; };
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
@@ -25,7 +37,6 @@
 		23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */; };
 		23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABA298E9FED00DAB279 /* MainContentView.swift */; };
 		23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */; };
-		23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */; };
 		23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */; };
 		79D23E739F8FA62E010FF28B /* Pods_Modern_frameworks_GB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +47,18 @@
 		23071EE72993924000C3167F /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		23071EEB2993931400C3167F /* ButtonWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithAction.swift; sourceTree = "<group>"; };
 		23071EED2993934A00C3167F /* TrackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButton.swift; sourceTree = "<group>"; };
+		23071EF7299A461400C3167F /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
+		23071EF9299A461E00C3167F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		23071EFB299A463100C3167F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		23071EFD299A463C00C3167F /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		23071EFF299A465E00C3167F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
+		23071F0B299A488200C3167F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23071F0F299A52EF00C3167F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		23071F12299A5E7900C3167F /* LoginContentView + Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginContentView + Model.swift"; sourceTree = "<group>"; };
+		23071F15299A5F7D00C3167F /* UserManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerImpl.swift; sourceTree = "<group>"; };
+		23071F17299A5F8500C3167F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		23071F1A299A8FD800C3167F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		23071F1C299A8FF800C3167F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -51,7 +74,6 @@
 		23EBCAB8298E9EF600DAB279 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		23EBCABA298E9FED00DAB279 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		23EBCABF298EA15F00DAB279 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
-		23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProviderProtocol.swift; sourceTree = "<group>"; };
 		23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProvider.swift; sourceTree = "<group>"; };
 		7492C50B40C344147DB101D3 /* Pods-Modern frameworks GB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modern frameworks GB.debug.xcconfig"; path = "Target Support Files/Pods-Modern frameworks GB/Pods-Modern frameworks GB.debug.xcconfig"; sourceTree = "<group>"; };
 		B9E2F6B02D5D313CE9A82902 /* Pods_Modern_frameworks_GB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modern_frameworks_GB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				23071EE72993924000C3167F /* LocationObject.swift */,
+				23071F0B299A488200C3167F /* User.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -98,6 +121,7 @@
 		23071EE92993930200C3167F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				23071F0E299A52E000C3167F /* TextFields */,
 				23071EEA2993930800C3167F /* Buttons */,
 			);
 			path = Common;
@@ -112,9 +136,73 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		23071EEF299A450700C3167F /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				23071EF1299A454D00C3167F /* Components */,
+				23071EF3299A455700C3167F /* Presenter */,
+				23071EF2299A455300C3167F /* View */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		23071EF1299A454D00C3167F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23071EFF299A465E00C3167F /* LoginContentView.swift */,
+				23071F12299A5E7900C3167F /* LoginContentView + Model.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23071EF2299A455300C3167F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23071EF7299A461400C3167F /* LoginViewProtocol.swift */,
+				23071EF9299A461E00C3167F /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23071EF3299A455700C3167F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				23071EFD299A463C00C3167F /* LoginPresenterProtocol.swift */,
+				23071EFB299A463100C3167F /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		23071F0E299A52E000C3167F /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				23071F0F299A52EF00C3167F /* TextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		23071F14299A5F5800C3167F /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				23071F17299A5F8500C3167F /* UserManager.swift */,
+				23071F15299A5F7D00C3167F /* UserManagerImpl.swift */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		23071F19299A8FCD00C3167F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				23071F1A299A8FD800C3167F /* Coordinator.swift */,
+				23071F1C299A8FF800C3167F /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				23071F14299A5F5800C3167F /* UserManager */,
 				23071EDF299391E200C3167F /* RouteManager */,
 				2319A0C9298EAF64001E0EB4 /* AppManager.swift */,
 			);
@@ -151,6 +239,7 @@
 		23EBCA99298E9CAA00DAB279 /* Modern frameworks GB */ = {
 			isa = PBXGroup;
 			children = (
+				23071F19299A8FCD00C3167F /* Coordinator */,
 				23071EE92993930200C3167F /* Common */,
 				23071EE52993923100C3167F /* Models */,
 				2319A0C8298EAF50001E0EB4 /* Managers */,
@@ -178,6 +267,7 @@
 		23EBCAAF298E9D2800DAB279 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				23071EEF299A450700C3167F /* Login Screen */,
 				23EBCAB0298E9E8400DAB279 /* Main Screen */,
 			);
 			path = Screens;
@@ -205,8 +295,8 @@
 		23EBCAB2298E9EAF00DAB279 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				23EBCA9E298E9CAA00DAB279 /* MainViewController.swift */,
 				23EBCAB4298E9ECB00DAB279 /* MainViewProtocol.swift */,
+				23EBCA9E298E9CAA00DAB279 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,7 +328,6 @@
 		23EBCAC2298EA17A00DAB279 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				23EBCAC4298EA19800DAB279 /* PresenterProviderProtocol.swift */,
 				23EBCAC6298EA1BD00DAB279 /* PresenterProvider.swift */,
 			);
 			path = Presenter;
@@ -395,20 +484,31 @@
 			files = (
 				23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */,
 				23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */,
+				23071F00299A465E00C3167F /* LoginContentView.swift in Sources */,
+				23071F10299A52EF00C3167F /* TextField.swift in Sources */,
 				23EBCAB7298E9EEE00DAB279 /* MainPresenterProtocol.swift in Sources */,
 				23EBCABB298E9FED00DAB279 /* MainContentView.swift in Sources */,
+				23071F0C299A488200C3167F /* User.swift in Sources */,
+				23071EFE299A463C00C3167F /* LoginPresenterProtocol.swift in Sources */,
+				23071F1D299A8FF800C3167F /* AppCoordinator.swift in Sources */,
+				23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
 				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
+				23071F16299A5F7D00C3167F /* UserManagerImpl.swift in Sources */,
 				23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */,
+				23071EFA299A461E00C3167F /* LoginViewController.swift in Sources */,
+				23071EFC299A463100C3167F /* LoginPresenter.swift in Sources */,
 				23EBCAB5298E9ECB00DAB279 /* MainViewProtocol.swift in Sources */,
 				23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */,
+				23071F18299A5F8500C3167F /* UserManager.swift in Sources */,
 				23071EE42993920300C3167F /* RouteManagerImpl.swift in Sources */,
+				23071F1B299A8FD800C3167F /* Coordinator.swift in Sources */,
 				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
-				23EBCAC5298EA19800DAB279 /* PresenterProviderProtocol.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
 				23071EEE2993934A00C3167F /* TrackButton.swift in Sources */,
+				23071EF8299A461400C3167F /* LoginViewProtocol.swift in Sources */,
 				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
 				23071EE82993924000C3167F /* LocationObject.swift in Sources */,
 			);
