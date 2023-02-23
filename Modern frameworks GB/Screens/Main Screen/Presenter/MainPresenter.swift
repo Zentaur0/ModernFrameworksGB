@@ -23,15 +23,20 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
     
     // MARK: - MainPresenterProtocol
     func onLoad() {
-        locationObserver.setOnLocationUpdate { [weak self] locationUpdate in
-            self?.updateViewCurrentLocation(with: locationUpdate)
-            self?.routeManager.updateLocation(locationUpdate)
-        }
+        locationObserver.locationUpdate
+            .asObservable()
+            .bind { [weak self] update in
+                self?.updateViewCurrentLocation(with: update)
+            }.dispose()
     }
     
     func updateCurrentLocation() {
-        let locationUpdate = locationObserver.getCurrentLocationUpdate()
-        updateViewCurrentLocation(with: locationUpdate)
+        do {
+            let locationUpdate = try locationObserver.locationUpdate.value()
+            updateViewCurrentLocation(with: locationUpdate)
+        } catch {
+            print(error)
+        }
     }
     
     func toogleTrack(_ shouldStartNewTrack: Bool) {

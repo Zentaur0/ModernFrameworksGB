@@ -1,17 +1,17 @@
 import Foundation
 import CoreLocation
+import RxSwift
 
 final class LocationManager: NSObject, LocationObserver {
+    
+    // MARK: - LocationObserver Properties
+    let locationUpdate = BehaviorSubject(value: CurrentLocationUpdate(currentLocation: .init()))
     
     // MARK: - Dependencies
     private let locationManager = CLLocationManager()
     
     // MARK: - Private Properties
     private let logger = Logger(component: "LocationManager")
-    private var lastLocation: CLLocation?
-    private var currentRouteLocations: [CLLocation] = []
-    
-    private var onLocationUpdate: ((CurrentLocationUpdate) -> Void)?
     
     // MARK: - Init
     override init() {
@@ -34,14 +34,6 @@ final class LocationManager: NSObject, LocationObserver {
     func stopTracking() {
         locationManager.stopUpdatingLocation()
     }
-
-    func getCurrentLocationUpdate() -> CurrentLocationUpdate {
-        return .init(currentLocation: lastLocation ?? .init())
-    }
-    
-    func setOnLocationUpdate(_ action: @escaping (CurrentLocationUpdate) -> Void) {
-        self.onLocationUpdate = action
-    }
 }
 
 // MARK: - Private Methods
@@ -59,10 +51,8 @@ private extension LocationManager {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        self.lastLocation = location
         logger.info(location)
-        
-        onLocationUpdate?(.init(currentLocation: location))
+        locationUpdate.onNext(.init(currentLocation: location))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

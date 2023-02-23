@@ -1,6 +1,7 @@
+import RxSwift
+
 protocol LocationObserver {
-    func setOnLocationUpdate(_ action: @escaping (CurrentLocationUpdate) -> Void)
-    func getCurrentLocationUpdate() -> CurrentLocationUpdate
+    var locationUpdate: BehaviorSubject<CurrentLocationUpdate> { get }
     func startTracking()
     func stopTracking()
 }
