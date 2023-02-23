@@ -1,8 +1,6 @@
-//
-//  LocationObserver.swift
-//  Modern frameworks GB
-//
-//  Created by Антон Сивцов on 23.02.2023.
-//
-
-import Foundation
+protocol LocationObserver {
+    func setOnLocationUpdate(_ action: @escaping (CurrentLocationUpdate) -> Void)
+    func getCurrentLocationUpdate() -> CurrentLocationUpdate
+    func startTracking()
+    func stopTracking()
+}
