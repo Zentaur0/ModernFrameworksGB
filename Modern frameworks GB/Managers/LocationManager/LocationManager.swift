@@ -19,14 +19,6 @@ final class LocationManager: NSObject, LocationObserver {
         setupLocationManager()
     }
     
-    private func setupLocationManager() {
-        locationManager.delegate = self
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
     func onLoad() {
         setupLocationManager()
     }
@@ -49,6 +41,17 @@ final class LocationManager: NSObject, LocationObserver {
     
     func setOnLocationUpdate(_ action: @escaping (CurrentLocationUpdate) -> Void) {
         self.onLocationUpdate = action
+    }
+}
+
+// MARK: - Private Methods
+private extension LocationManager {
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
     }
 }
 
