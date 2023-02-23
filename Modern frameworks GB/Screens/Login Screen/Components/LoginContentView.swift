@@ -127,6 +127,8 @@ private extension LoginContentView {
     
     func setupPasswordTextField() {
         passwordTextField.placeholder = "Password"
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocorrectionType = .no
     }
     
     func setupEnterButton() {
