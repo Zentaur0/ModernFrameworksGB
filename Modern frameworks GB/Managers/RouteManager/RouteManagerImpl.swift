@@ -6,7 +6,8 @@ import RealmSwift
 final class RouteManagerImpl: RouteManager {
     
     // MARK: - Private Properties
-    private let logger = Logger(component: "MainPresenter")
+    private var isTracking: Bool = false
+    private let logger = Logger(component: "RouteManagerImpl")
     private var currentRoute = List<LocationObject>()
     private let currentRoutePath = GMSMutablePath()
     private lazy var savedRoute: Results<LocationObject>? = {
@@ -22,16 +23,45 @@ final class RouteManagerImpl: RouteManager {
     }
     
     // MARK: - RouteManager
-    var isTracking: Bool = false
     
-    func appendLocation(_ location: CLLocation) {
-        let coordinate = location.coordinate
+    func updateLocation(_ update: CurrentLocationUpdate) {
+        guard isTracking else { return }
+        
+        let coordinate = update.currentLocation.coordinate
         let locationObject = LocationObject()
         locationObject.latitude = coordinate.latitude
         locationObject.longitude = coordinate.longitude
         currentRoute.append(locationObject)
     }
     
+    func startTracking() {
+        isTracking = true
+    }
+    
+    func stopTracking() {
+        saveRoute()
+        isTracking = false
+    }
+    
+    func showPreviousRoute(onCompletion: @escaping (_ update: PathUpdate?) -> Void) {
+        let block: (PathUpdate?) -> Void = { update in
+            DispatchQueue.main.async {
+                onCompletion(update)
+            }
+        }
+        
+        guard isTracking == false else {
+            block(nil)
+            return
+        }
+        
+        let savedPath = getSavedPath()
+        block(savedPath)
+    }
+}
+
+// MARK: - Private Properties
+private extension RouteManagerImpl {
     func saveRoute() {
         removeOldRoute()
         realmQueue.sync {
@@ -48,17 +78,16 @@ final class RouteManagerImpl: RouteManager {
         }
     }
     
-    func getSavedPath() -> GMSMutablePath {
+    func getSavedPath() -> PathUpdate {
         let coordinated = getSavedCoordinates()
         coordinated.forEach {
             currentRoutePath.add($0.coordinate)
         }
         
-        return currentRoutePath
+        return .init(path: currentRoutePath)
     }
     
-    // MARK: - Private Properties
-    private func getSavedCoordinates() -> [CLLocation] {
+    func getSavedCoordinates() -> [CLLocation] {
         savedRoute?.forEach {
             currentRoute.append($0)
         }
@@ -66,7 +95,7 @@ final class RouteManagerImpl: RouteManager {
         return currentRoute.map { CLLocation(latitude: $0.latitude, longitude: $0.longitude) }
     }
     
-    private func getPreviousRoute() -> Results<LocationObject>? {
+    func getPreviousRoute() -> Results<LocationObject>? {
         realmQueue.sync {
             do {
                 let realm = try Realm()
@@ -78,7 +107,7 @@ final class RouteManagerImpl: RouteManager {
         }
     }
     
-    private func removeOldRoute() {
+    func removeOldRoute() {
         guard savedRoute?.isEmpty == false else { return }
         realmQueue.sync {
             do {
@@ -93,7 +122,7 @@ final class RouteManagerImpl: RouteManager {
         }
     }
     
-    private func clearRoute() {
+    func clearRoute() {
         currentRoute.removeAll()
     }
 }

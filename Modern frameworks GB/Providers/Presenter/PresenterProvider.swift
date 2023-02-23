@@ -8,7 +8,8 @@ final class PresenterProvider {
     // MARK: - Public Methods
     func makeMainPresenter() -> MainPresenter {
         let routeManager = RouteManagerImpl(realmQueue: realmQueue)
-        let presenter = MainPresenter(routeManager: routeManager)
+        let locationObserver = LocationManager()
+        let presenter = MainPresenter(locationObserver: locationObserver, routeManager: routeManager)
         return presenter
     }
     
