@@ -1,9 +1,8 @@
 import CoreLocation
-import GoogleMaps
 
-protocol RouteManager {
-    var isTracking: Bool { get set }
-    func appendLocation(_ location: CLLocation)
-    func getSavedPath() -> GMSMutablePath
-    func saveRoute()
+protocol RouteManager: AnyObject {
+    func startTracking()
+    func stopTracking()
+    func updateLocation(_ update: CurrentLocationUpdate)
+    func showPreviousRoute(onCompletion: @escaping (_ update: PathUpdate?) -> Void)
 }

@@ -1,5 +1,7 @@
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class LoginContentView: UIScrollView {
     
@@ -24,6 +26,17 @@ final class LoginContentView: UIScrollView {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
+        
+        Observable
+            .combineLatest(
+                loginTextField.rx.text,
+                passwordTextField.rx.text )
+            .map { login, password in
+                return !(login ?? "").isEmpty && (password ?? "").count >= 6 }
+            .bind { [weak self] inputFilled in
+                self?.enterButton.isEnabled = inputFilled
+                self?.registerButton.isEnabled = inputFilled
+            }
     }
     
     @available (*, unavailable)

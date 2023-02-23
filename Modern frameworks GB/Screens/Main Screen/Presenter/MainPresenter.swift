@@ -1,20 +1,18 @@
 import Foundation
-import CoreLocation
 
 final class MainPresenter: NSObject, MainPresenterProtocol {
     
     // MARK: - Private Properties
-    private let logger = Logger(component: "MainPresenter")
-    private var lastLocation: CLLocation?
-    private let locationManager = CLLocationManager()
-    private var currentRouteLocations: [CLLocation] = []
     private weak var view: MainViewProtocol?
     
     // MARK: - Dependencies
+    private let locationObserver: LocationObserver
     private var routeManager: RouteManager
     
     // MARK: - Init
-    init(routeManager: RouteManager) {
+    init(locationObserver: LocationObserver,
+         routeManager: RouteManager) {
+        self.locationObserver = locationObserver
         self.routeManager = routeManager
     }
     
@@ -25,41 +23,34 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
     
     // MARK: - MainPresenterProtocol
     func onLoad() {
-        setupLocationManager()
+        locationObserver.locationUpdate
+            .asObservable()
+            .bind { [weak self] update in
+                self?.updateViewCurrentLocation(with: update)
+            }.dispose()
     }
     
     func updateCurrentLocation() {
-        guard let lastLocation = lastLocation else { return }
-        updateViewCurrentLocation(with: lastLocation)
+        do {
+            let locationUpdate = try locationObserver.locationUpdate.value()
+            updateViewCurrentLocation(with: locationUpdate)
+        } catch {
+            print(error)
+        }
     }
     
     func toogleTrack(_ shouldStartNewTrack: Bool) {
         shouldStartNewTrack ? startTracking() : stopTracking()
     }
     
-    func startTracking() {
-        routeManager.isTracking = true
-        locationManager.startUpdatingLocation()
-        view?.startTracking()
-    }
-    
-    func stopTracking() {
-        routeManager.saveRoute()
-        routeManager.isTracking = false
-        locationManager.stopUpdatingLocation()
-        view?.stopTracking()
-    }
-    
     func showPreviousRoute() {
-        guard routeManager.isTracking == false else {
-            view?.showNotPermittedAlert()
-            return
-        }
-        
-        let savedPath = routeManager.getSavedPath()
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.view?.updateCamera(with: .init(path: savedPath))
+        routeManager.showPreviousRoute { [weak view] update in
+            guard let update = update else {
+                view?.showNotPermittedAlert()
+                return
+            }
+            
+            view?.updateCamera(with: .init(path: update.path))
         }
     }
     
@@ -70,34 +61,20 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
 
 // MARK: - Private Methods
 private extension MainPresenter {
-    func setupLocationManager() {
-        locationManager.delegate = self
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
-    func updateViewCurrentLocation(with location: CLLocation) {
-        let model = MainContentView.Model(currentLocation: location)
+    func updateViewCurrentLocation(with update: CurrentLocationUpdate) {
+        let model = MainContentView.Model(currentLocation: update.currentLocation)
         view?.updateMap(with: model)
     }
-}
-
-// MARK: - CLLocationManagerDelegate -
-extension MainPresenter: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        self.lastLocation = location
-        updateViewCurrentLocation(with: location)
-        logger.info(location)
-        
-        if routeManager.isTracking {
-            routeManager.appendLocation(location)
-        }
+    
+    func startTracking() {
+        routeManager.startTracking()
+        locationObserver.startTracking()
+        view?.startTracking()
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        logger.error(error)
+    func stopTracking() {
+        routeManager.stopTracking()
+        locationObserver.stopTracking()
+        view?.stopTracking()
     }
 }

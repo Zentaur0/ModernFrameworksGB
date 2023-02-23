@@ -27,6 +27,10 @@
 		2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0C9298EAF64001E0EB4 /* AppManager.swift */; };
 		2319A0CD298EC803001E0EB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319A0CC298EC803001E0EB4 /* Model.swift */; };
 		238376CA298ECF3A00D6C812 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238376C9298ECF3A00D6C812 /* Logger.swift */; };
+		2395A3D429A748E40041BC66 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3D329A748E40041BC66 /* LocationManager.swift */; };
+		2395A3D629A756B60041BC66 /* CurrentLocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3D529A756B60041BC66 /* CurrentLocationUpdate.swift */; };
+		2395A3D829A756C90041BC66 /* PathUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3D729A756C90041BC66 /* PathUpdate.swift */; };
+		2395A3DB29A756EA0041BC66 /* LocationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3DA29A756EA0041BC66 /* LocationObserver.swift */; };
 		23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */; };
 		23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */; };
 		23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9E298E9CAA00DAB279 /* MainViewController.swift */; };
@@ -62,6 +66,10 @@
 		2319A0C9298EAF64001E0EB4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		2319A0CC298EC803001E0EB4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		238376C9298ECF3A00D6C812 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2395A3D329A748E40041BC66 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2395A3D529A756B60041BC66 /* CurrentLocationUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationUpdate.swift; sourceTree = "<group>"; };
+		2395A3D729A756C90041BC66 /* PathUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUpdate.swift; sourceTree = "<group>"; };
+		2395A3DA29A756EA0041BC66 /* LocationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObserver.swift; sourceTree = "<group>"; };
 		23EBCA97298E9CAA00DAB279 /* Modern frameworks GB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modern frameworks GB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				23071EE62993923900C3167F /* Realm */,
+				2395A3D529A756B60041BC66 /* CurrentLocationUpdate.swift */,
+				2395A3D729A756C90041BC66 /* PathUpdate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +212,7 @@
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				2395A3D929A756E10041BC66 /* LocationManager */,
 				23071F14299A5F5800C3167F /* UserManager */,
 				23071EDF299391E200C3167F /* RouteManager */,
 				2319A0C9298EAF64001E0EB4 /* AppManager.swift */,
@@ -216,6 +227,15 @@
 				2319A0CC298EC803001E0EB4 /* Model.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		2395A3D929A756E10041BC66 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				2395A3DA29A756EA0041BC66 /* LocationObserver.swift */,
+				2395A3D329A748E40041BC66 /* LocationManager.swift */,
+			);
+			path = LocationManager;
 			sourceTree = "<group>";
 		};
 		23EBCA8E298E9CAA00DAB279 = {
@@ -484,6 +504,7 @@
 			files = (
 				23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */,
 				23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */,
+				2395A3D429A748E40041BC66 /* LocationManager.swift in Sources */,
 				23071F00299A465E00C3167F /* LoginContentView.swift in Sources */,
 				23071F10299A52EF00C3167F /* TextField.swift in Sources */,
 				23EBCAB7298E9EEE00DAB279 /* MainPresenterProtocol.swift in Sources */,
@@ -493,11 +514,13 @@
 				23071F1D299A8FF800C3167F /* AppCoordinator.swift in Sources */,
 				23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
+				2395A3DB29A756EA0041BC66 /* LocationObserver.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
 				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
 				23071F16299A5F7D00C3167F /* UserManagerImpl.swift in Sources */,
 				23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */,
 				23071EFA299A461E00C3167F /* LoginViewController.swift in Sources */,
+				2395A3D629A756B60041BC66 /* CurrentLocationUpdate.swift in Sources */,
 				23071EFC299A463100C3167F /* LoginPresenter.swift in Sources */,
 				23EBCAB5298E9ECB00DAB279 /* MainViewProtocol.swift in Sources */,
 				23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */,
@@ -507,6 +530,7 @@
 				2319A0CA298EAF64001E0EB4 /* AppManager.swift in Sources */,
 				238376CA298ECF3A00D6C812 /* Logger.swift in Sources */,
 				23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */,
+				2395A3D829A756C90041BC66 /* PathUpdate.swift in Sources */,
 				23071EEE2993934A00C3167F /* TrackButton.swift in Sources */,
 				23071EF8299A461400C3167F /* LoginViewProtocol.swift in Sources */,
 				23EBCAC0298EA15F00DAB279 /* ViewControllerBuilder.swift in Sources */,
