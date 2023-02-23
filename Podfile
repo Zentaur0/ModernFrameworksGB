@@ -11,5 +11,6 @@ target 'Modern frameworks GB' do
   pod 'SnapKit'
   pod 'RealmSwift'
   pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
