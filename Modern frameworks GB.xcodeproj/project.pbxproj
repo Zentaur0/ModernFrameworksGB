@@ -31,6 +31,8 @@
 		2395A3D629A756B60041BC66 /* CurrentLocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3D529A756B60041BC66 /* CurrentLocationUpdate.swift */; };
 		2395A3D829A756C90041BC66 /* PathUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3D729A756C90041BC66 /* PathUpdate.swift */; };
 		2395A3DB29A756EA0041BC66 /* LocationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3DA29A756EA0041BC66 /* LocationObserver.swift */; };
+		2395A3E529A78D530041BC66 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3E429A78D530041BC66 /* PushNotificationManager.swift */; };
+		2395A3E729A78D5E0041BC66 /* LocalPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395A3E629A78D5E0041BC66 /* LocalPushNotificationManager.swift */; };
 		23EBCA9B298E9CAA00DAB279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */; };
 		23EBCA9D298E9CAA00DAB279 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */; };
 		23EBCA9F298E9CAA00DAB279 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA9E298E9CAA00DAB279 /* MainViewController.swift */; };
@@ -70,6 +72,8 @@
 		2395A3D529A756B60041BC66 /* CurrentLocationUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationUpdate.swift; sourceTree = "<group>"; };
 		2395A3D729A756C90041BC66 /* PathUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUpdate.swift; sourceTree = "<group>"; };
 		2395A3DA29A756EA0041BC66 /* LocationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObserver.swift; sourceTree = "<group>"; };
+		2395A3E429A78D530041BC66 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		2395A3E629A78D5E0041BC66 /* LocalPushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationManager.swift; sourceTree = "<group>"; };
 		23EBCA97298E9CAA00DAB279 /* Modern frameworks GB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modern frameworks GB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EBCA9A298E9CAA00DAB279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23EBCA9C298E9CAA00DAB279 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		2319A0C8298EAF50001E0EB4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				2395A3E329A78D450041BC66 /* PushNotificationManager */,
 				2395A3D929A756E10041BC66 /* LocationManager */,
 				23071F14299A5F5800C3167F /* UserManager */,
 				23071EDF299391E200C3167F /* RouteManager */,
@@ -236,6 +241,15 @@
 				2395A3D329A748E40041BC66 /* LocationManager.swift */,
 			);
 			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		2395A3E329A78D450041BC66 /* PushNotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				2395A3E429A78D530041BC66 /* PushNotificationManager.swift */,
+				2395A3E629A78D5E0041BC66 /* LocalPushNotificationManager.swift */,
+			);
+			path = PushNotificationManager;
 			sourceTree = "<group>";
 		};
 		23EBCA8E298E9CAA00DAB279 = {
@@ -502,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2395A3E529A78D530041BC66 /* PushNotificationManager.swift in Sources */,
 				23EBCAC7298EA1BD00DAB279 /* PresenterProvider.swift in Sources */,
 				23071EEC2993931400C3167F /* ButtonWithAction.swift in Sources */,
 				2395A3D429A748E40041BC66 /* LocationManager.swift in Sources */,
@@ -514,6 +529,7 @@
 				23071F1D299A8FF800C3167F /* AppCoordinator.swift in Sources */,
 				23071F13299A5E7900C3167F /* LoginContentView + Model.swift in Sources */,
 				2319A0CD298EC803001E0EB4 /* Model.swift in Sources */,
+				2395A3E729A78D5E0041BC66 /* LocalPushNotificationManager.swift in Sources */,
 				2395A3DB29A756EA0041BC66 /* LocationObserver.swift in Sources */,
 				23EBCAB9298E9EF600DAB279 /* MainPresenter.swift in Sources */,
 				23071EE2299391EE00C3167F /* RouteManager.swift in Sources */,
