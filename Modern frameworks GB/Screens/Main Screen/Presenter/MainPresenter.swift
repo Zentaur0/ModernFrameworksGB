@@ -3,6 +3,7 @@ import Foundation
 final class MainPresenter: NSObject, MainPresenterProtocol {
     
     // MARK: - Private Properties
+    private let logger = Logger(component: "MainPresenter")
     private weak var view: MainViewProtocol?
     
     // MARK: - Dependencies
@@ -28,6 +29,8 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
             .bind { [weak self] update in
                 self?.updateViewCurrentLocation(with: update)
             }.dispose()
+        
+        setMarkerImage()
     }
     
     func updateCurrentLocation() {
@@ -57,6 +60,23 @@ final class MainPresenter: NSObject, MainPresenterProtocol {
     func logout() {
         view?.logout()
     }
+    
+    func showImagePicker() {
+        view?.showImagePickerController()
+    }
+    
+    func saveMarkerModel(_ model: ImagePickerController.Model) {
+        let image = model.image
+        let data = image?.pngData()
+        
+        do {
+            guard let markerImageURL = getMarkerImageURL() else { return }
+            try data?.write(to: markerImageURL, options: [.atomic])
+            setMarkerImage()
+        } catch {
+            logger.error(error)
+        }
+    }
 }
 
 // MARK: - Private Methods
@@ -76,5 +96,25 @@ private extension MainPresenter {
         routeManager.stopTracking()
         locationObserver.stopTracking()
         view?.stopTracking()
+    }
+    
+    func getDocumentsDirectory() -> URL? {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths.first
+    }
+    
+    func getMarkerImageURL() -> URL? {
+        guard let directory = getDocumentsDirectory() else {
+            logger.error(ReadingFileManagerError.failedToReadDirectory)
+            return nil
+        }
+        
+        let url = directory.appendingPathComponent(directoryKey: .markerImage, conformingTo: .image)
+        return url
+    }
+    
+    func setMarkerImage() {
+        let url = getMarkerImageURL()
+        view?.setMarkerImage(with: url?.path ?? "")
     }
 }
