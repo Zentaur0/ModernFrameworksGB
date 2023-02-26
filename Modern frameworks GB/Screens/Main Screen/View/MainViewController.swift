@@ -15,6 +15,7 @@ final class MainViewController: UIViewController {
     // MARK: - Private Properties
     private let presenter: MainPresenterProtocol
     private let contentView = MainContentView()
+    private lazy var imagePickerController = ImagePickerController()
     
     // MARK: - Init
     init(presenter: MainPresenterProtocol) {
@@ -77,6 +78,19 @@ extension MainViewController: MainViewProtocol {
     func updateCamera(with path: MainContentView.CameraUpdatePath) {
         contentView.updateCamera(with: path)
     }
+    
+    func showImagePickerController() {
+        let picker = imagePickerController.getPicker()
+        imagePickerController.onDismiss = { [unowned self] model in
+            picker.dismiss(animated: true)
+            self.presenter.saveMarkerModel(model)
+        }
+        self.present(picker, animated: true)
+    }
+    
+    func setMarkerImage(with path: String) {
+        contentView.setMarkerImage(with: path)
+    }
 }
 
 private extension MainViewController {
@@ -95,6 +109,10 @@ private extension MainViewController {
         
         contentView.setLogoutButtonAction { [unowned self] in
             self.presenter.logout()
+        }
+        
+        contentView.setAddPhotoToMarkerButtonAction { [unowned self] in
+            self.presenter.showImagePicker()
         }
     }
 }

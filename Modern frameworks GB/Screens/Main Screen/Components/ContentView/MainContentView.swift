@@ -10,14 +10,15 @@ final class MainContentView: UIView {
     
     // MARK: - Private Properties
     private let mapView = GMSMapView()
-    private var currentMarker: GMSMarker?
     private var manualMarker: GMSMarker?
+    private var manualMarkerIconView: UIImageView?
     private let buttonsContaner = UIStackView()
     private let buttonsContainerBackgroundView = UIView()
     private let currentLocationButton = ButtonWithAction()
     private let trackButton = TrackButton()
     private let previousRouteButton = ButtonWithAction()
     private let logoutButton = ButtonWithAction()
+    private let addPhotoOnMarkerButton = ButtonWithAction()
     private var route: GMSPolyline?
     private var routePath: GMSMutablePath?
     
@@ -87,6 +88,20 @@ extension MainContentView {
     func setLogoutButtonAction(_ action: @escaping EmptyClosure) {
         logoutButton.setButtonAction(action)
     }
+    
+    func setAddPhotoToMarkerButtonAction(_ action: @escaping EmptyClosure) {
+        addPhotoOnMarkerButton.setButtonAction(action)
+    }
+    
+    func setMarkerImage(with path: String) {
+        manualMarkerIconView = nil
+        manualMarker?.iconView = nil
+        let image = UIImage(contentsOfFile: path)
+        let imageView = UIImageView(image: image)
+        imageView.snp.makeConstraints { $0.size.equalTo(20) }
+        manualMarkerIconView = imageView
+        manualMarker?.iconView = imageView
+    }
 }
 
 // MARK: - Private Methods
@@ -101,6 +116,7 @@ private extension MainContentView {
         setupPreviousRouteButton()
         setupMapView()
         setupLogoutButton()
+        setupAddPhotoToMarkerButton()
     }
     
     func setupConstraints() {
@@ -124,6 +140,13 @@ private extension MainContentView {
             $0.centerX.equalToSuperview()
         }
         
+        addPhotoOnMarkerButton.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)
+            $0.leading.equalToSuperview().inset(20)
+            $0.width.equalTo(90)
+            $0.height.equalTo(40)
+        }
+        
         logoutButton.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)
             $0.trailing.equalToSuperview().inset(20)
@@ -134,6 +157,7 @@ private extension MainContentView {
     
     func addSubviews() {
         addSubview(mapView)
+        addSubview(addPhotoOnMarkerButton)
         addSubview(logoutButton)
         addSubview(buttonsContainerBackgroundView)
         buttonsContainerBackgroundView.addSubview(buttonsContaner)
@@ -195,11 +219,22 @@ private extension MainContentView {
         let newMarker = GMSMarker(position: coordinate)
         newMarker.map = mapView
         marker = newMarker
+        marker?.iconView = manualMarkerIconView
     }
     
     func setupLogoutButton() {
         logoutButton.setTitle("Logout", for: .normal)
         logoutButton.backgroundColor = .black
+        addPhotoOnMarkerButton.layer.borderWidth = 0.5
+        addPhotoOnMarkerButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func setupAddPhotoToMarkerButton() {
+        addPhotoOnMarkerButton.setTitle("Set Photo", for: .normal)
+        addPhotoOnMarkerButton.backgroundColor = .white
+        addPhotoOnMarkerButton.setTitleColor(.black, for: .normal)
+        addPhotoOnMarkerButton.layer.borderWidth = 0.5
+        addPhotoOnMarkerButton.layer.borderColor = UIColor.black.cgColor
     }
 }
 

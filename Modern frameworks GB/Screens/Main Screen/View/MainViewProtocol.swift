@@ -7,4 +7,6 @@ protocol MainViewProtocol: AnyObject {
     func showNotPermittedAlert()
     func updateCamera(with path: MainContentView.CameraUpdatePath)
     func logout()
+    func showImagePickerController()
+    func setMarkerImage(with path: String)
 }
